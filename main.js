@@ -27,6 +27,11 @@ Kolla "span"! (Andreas presentation)
 */
 //const nyUppgift = document.getElementById('nyUppgift');
 
+/* 28/9 från Andreas:
+
+
+*/
+
 
 
 // Hämtar in referens till listan
@@ -37,31 +42,66 @@ const laggTillBtn = document.querySelector("#laggTillBtn");
 
 const returInfo = document.querySelector("#info");
 
+const avklarat = document.querySelector("#avklarat");
+let avklaradeUppgifter = 0;
+
+// Kika på det där med array, både lägga till och ta bort
+const todoArray = [];
+
+
 laggTillBtn.addEventListener("click", function(){
 
+   
     let nyUppgift = document.querySelector("#nyUppgift");
     let nySakAttGora = nyUppgift.value;                         // Tar in det som matats in i fältet
+    //todoArray.push(nySakAttGora);
     
     if (nySakAttGora.length == 0){
         returInfo.innerHTML = "Vänligen ange en uppgift, mothertrucker :)";
         return;
     } else {
         let sakAttGora = document.createElement('li');
-        let sakAttGoraLabel = document.createElement('span');
+        const sakAttGoraLabel = document.createElement('span');
     
         listan.appendChild(sakAttGora);                             // Lägger till en rad i listan
         sakAttGoraLabel.innerText = nySakAttGora; 
         sakAttGora.appendChild(sakAttGoraLabel);
+
+
+        
+        sakAttGoraLabel.addEventListener('click', function(){
+        if (sakAttGora.getAttribute('class') == 'completed') {
+        sakAttGora.setAttribute('class', '');
+        avklaradeUppgifter--;
+        }
+        else {
+        sakAttGora.setAttribute('class', 'completed');
+        avklaradeUppgifter++;
+
+        //Hur gör jag överstrykning här?
+        //sakAttGoraLabel.innerHTML.strike;
+        
+        }
+
+        avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`;
+        
+
+        
+    });
+
+
+
 
         //Tömmer inmatningsfältet
         nyUppgift.value = "";
         returInfo.innerHTML = "";
     }
 
-    
 
   });
 
+  
+ 
 
 
 
