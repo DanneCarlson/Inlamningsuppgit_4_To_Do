@@ -1,36 +1,4 @@
-/*
-Info från Andreas för To-do-list
-H1
-p - vad som är klart
-label med id- input
-input type id och namn
-knapp med id
-<small> där jag kan ange lite mer info
-<ul> som är tom från början
 
-enkel css:
-bakgrund
-.completed {
-    text.decoration: line-through;
-    color:
-}
-
-JavaScript:
-const för alla element som jag ska komma åt från HTML
-innerHTML
-
-Hämta värde från vår input:
-const input = document.querySelector('input');
-Använd appendChild för att lägga till i ul
-
-Kolla "span"! (Andreas presentation)
-*/
-//const nyUppgift = document.getElementById('nyUppgift');
-
-/* 28/9 från Andreas:
-
-
-*/
 
 
 
@@ -38,7 +6,7 @@ Kolla "span"! (Andreas presentation)
 const listan = document.querySelector("#list");
 
 const laggTillBtn = document.querySelector("#laggTillBtn");
-//const labelInput = document.querySelector("#labelInput");
+
 
 const returInfo = document.querySelector("#info");
 
@@ -54,6 +22,7 @@ laggTillBtn.addEventListener("click", function(){
    
     let nyUppgift = document.querySelector("#nyUppgift");
     let nySakAttGora = nyUppgift.value;                         // Tar in det som matats in i fältet
+    
     //todoArray.push(nySakAttGora);
     
     if (nySakAttGora.length == 0){
@@ -66,6 +35,9 @@ laggTillBtn.addEventListener("click", function(){
         listan.appendChild(sakAttGora);                             // Lägger till en rad i listan
         sakAttGoraLabel.innerText = nySakAttGora; 
         sakAttGora.appendChild(sakAttGoraLabel);
+
+        // Detta funkar också, men gammal standard?:
+        //sakAttGoraLabel.classList.add("completed");
 
 
         
@@ -83,16 +55,24 @@ laggTillBtn.addEventListener("click", function(){
         
         }
 
-        avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`;
-        
+        /*// Tillagt 29/9
+        const todoObject = {};
+        todoObject.todo = nyUppgift;
+        //todoObject.status = "ej avklarad";
+        todoArray.push(todoObject);*/
 
-        
+        avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`;
+
+        // Lägga till papperskorg:
+        // Font Awesome?
+        // Emojis, kolla w3schools: &#1F5D1 (papperskorg)
+      
     });
 
 
 
 
-        //Tömmer inmatningsfältet
+        //Tömmer inmatningsfältet och infofältet
         nyUppgift.value = "";
         returInfo.innerHTML = "";
     }
