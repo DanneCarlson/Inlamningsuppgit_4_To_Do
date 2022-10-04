@@ -1,12 +1,9 @@
 
 
-
-
 // Hämtar in referens till listan
 const listan = document.querySelector("#list");
 
 const laggTillBtn = document.querySelector("#laggTillBtn");
-
 
 const returInfo = document.querySelector("#info");
 
@@ -19,11 +16,11 @@ const todoArray = [];
 
 laggTillBtn.addEventListener("click", function(){
 
-   
+    // Behöver man ta in hela elementet först?
     let nyUppgift = document.querySelector("#nyUppgift");
     let nySakAttGora = nyUppgift.value;                         // Tar in det som matats in i fältet
     
-    //todoArray.push(nySakAttGora);
+    
     
     if (nySakAttGora.length == 0){
         returInfo.innerHTML = "Vänligen ange en uppgift, mothertrucker :)";
@@ -31,16 +28,14 @@ laggTillBtn.addEventListener("click", function(){
     } else {
         let sakAttGora = document.createElement('li');
         const sakAttGoraLabel = document.createElement('span');
-    
+        todoArray.push(nySakAttGora);
         listan.appendChild(sakAttGora);                             // Lägger till en rad i listan
         sakAttGoraLabel.innerText = nySakAttGora; 
         sakAttGora.appendChild(sakAttGoraLabel);
 
-        // Detta funkar också, men gammal standard?:
+        // Detta funkar också.
         //sakAttGoraLabel.classList.add("completed");
 
-
-        
         sakAttGoraLabel.addEventListener('click', function(){
         if (sakAttGora.getAttribute('class') == 'completed') {
         sakAttGora.setAttribute('class', '');
@@ -50,8 +45,6 @@ laggTillBtn.addEventListener("click", function(){
         sakAttGora.setAttribute('class', 'completed');
         avklaradeUppgifter++;
 
-        //Hur gör jag överstrykning här?
-        //sakAttGoraLabel.innerHTML.strike;
         
         }
 
