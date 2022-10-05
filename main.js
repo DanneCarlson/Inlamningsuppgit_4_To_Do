@@ -1,5 +1,3 @@
-
-
 // Hämtar in referens till listan
 const listan = document.querySelector("#list");
 
@@ -19,87 +17,82 @@ const todoArray = [];
 // Referens till det som användaren matar in i textfältet
 const nyUppgift = document.querySelector("#nyUppgift");
 
+laggTillBtn.addEventListener("click", function () {
+  // Lokal variabel för det som användaren matat in
+  let nySakAttGora = nyUppgift.value;
+  let papperskorg = ["Ta bort"]; // Här vill jag ha en bild
 
-laggTillBtn.addEventListener("click", function(){
 
-    // Lokal variabel för det som användaren matat in
-    let nySakAttGora = nyUppgift.value;                         
+  /*let papperskorg = [];
+  papperskorg[0] = "trash.png";*/
+
+  // Om användaren inte matat in något i textfältet
+  if (nySakAttGora.length == 0) {
+    returInfo.innerHTML = "Vänligen ange en uppgift att lägga till";
+    return;
+  } else {
+    let sakAttGora = document.createElement("li"); // Skapar plats i listan
+    let sakAttGoraLabel = document.createElement("span"); // Skapar ett span i listan
+
+    // Hur skapar jag ett tomrum mellan uppgiften och ta bort?
+    let tomrumLabel = document.createElement("span");
+    tomrumLabel.innerHTML = ":    :    :";
+
+    let taBortLabel = document.createElement("span");
+    taBortLabel.innerHTML = papperskorg[0];
+
     
-    // Om användaren inte matat in något i textfältet
-    if (nySakAttGora.length == 0){
-        returInfo.innerHTML = "Vänligen ange en uppgift";
-        return;
-    } else {
-        let sakAttGora = document.createElement('li');              // Skapar plats i listan
-        let sakAttGoraLabel = document.createElement('span');       // Skapar ett span i listan
-        todoArray.push(nySakAttGora);                               // Lägg till uppgiften i arrayen
-        listan.appendChild(sakAttGora);                             // Lägger till en rad i listan
-        sakAttGoraLabel.innerText = nySakAttGora;                   // Visar den nya uppgiften
-        sakAttGora.appendChild(sakAttGoraLabel);                    // Lägger till uppgiften i listelementet
 
-      
-        // När en klickar på span/uppgift i listan
-        sakAttGoraLabel.addEventListener('click', function(){
-        if (sakAttGora.getAttribute('class') == 'completed') {      // Om uppgiften redan har klassen utförd
-        sakAttGora.setAttribute('class', '');
-        avklaradeUppgifter--;                                       // Subtrahera från avklarade uppgifter
-        }
-        else {
-        sakAttGora.setAttribute('class', 'completed');              // Annars ge den klassen completed via css
-        avklaradeUppgifter++;                                       // Addera till avklarade uppgifter
+    listan.appendChild(sakAttGora); // Lägger till element/rad i listan
+    sakAttGoraLabel.innerText = nySakAttGora; // Sätter det som användaren matat in
+    sakAttGora.appendChild(sakAttGoraLabel); // Lägger till uppgiften i listelementet +++++ ett till span
+    sakAttGora.appendChild(tomrumLabel);
+    sakAttGora.appendChild(taBortLabel);
 
-        
-        }
+    todoArray.push(nySakAttGora); // Lägg till uppgiften i arrayen
 
-        /*// Tillagt 29/9
+    // När en klickar på span/uppgift i listan
+    sakAttGoraLabel.addEventListener("click", function () {
+      if (sakAttGora.getAttribute("class") == "completed") {
+        // Om uppgiften redan har klassen utförd
+        sakAttGora.setAttribute("class", "");
+        avklaradeUppgifter--; // Subtrahera från avklarade uppgifter
+      } else {
+        sakAttGora.setAttribute("class", "completed"); // Annars ge den klassen completed via css
+        avklaradeUppgifter++; // Addera till avklarade uppgifter
+      }
+
+      /*// Tillagt 29/9
         const todoObject = {};
         todoObject.todo = nyUppgift;
         //todoObject.status = "ej avklarad";
         todoArray.push(todoObject);*/
 
-        avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`;     // Visar antalet avklarade uppgifter
+     
 
-        // Lägga till papperskorg:
-        // Font Awesome?
-        // Emojis, kolla w3schools: &#1F5D1 (papperskorg)
-      
+      avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`; // Visar antalet avklarade uppgifter
+
+      // Lägga till papperskorg:
+      // Font Awesome?
+      // Emojis, kolla w3schools: &#1F5D1 (papperskorg)
     });
 
+    taBortLabel.addEventListener("click", function () {
+      // Om klassen är completed ska avklaradeUppgifter räknas ned
+      if (sakAttGora.getAttribute("class") == "completed") {
+        avklaradeUppgifter--; // Subtrahera från avklarade uppgifter
+      }
+      sakAttGora.remove(sakAttGora);
+      avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`;
+    });
 
-
-
-        //Tömmer inmatningsfältet och infofältet
-        nyUppgift.value = "";
-        returInfo.innerHTML = "";
-    }
-
-
-  });
-
-  
- 
-
-
-
-
-
-
-
-
-
-/*function addToList (){
-    
-    let nyUppgift = document.getElementById("nyUppgift");
-    let newListElement = document.getElementById("list");
-    
-    newListElement.addToList = nyUppgift;
-    newListElement.innerHTML = newListElement;
-
-    //newListElement = document.createElement(nyUppgift);
-    //li.appendChild(document.createTextNode("Element 4"));
+    //avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`; // Visar antalet avklarade uppgifter
 
     
-    //document.getElementById("list").innerHTML = "Fakk";
-    
+    //Tömmer inmatningsfältet och infofältet
+    nyUppgift.value = "";
+    returInfo.innerHTML = "";
+  }
+});
 
-}*/
+
