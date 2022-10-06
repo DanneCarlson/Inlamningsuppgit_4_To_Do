@@ -53,12 +53,12 @@ laggTillBtn.addEventListener("click", function () {
 
     // När en klickar på span/uppgift i listan
     sakAttGoraLabel.addEventListener("click", function () {
-      if (sakAttGora.getAttribute("class") == "completed") {
+      if (sakAttGoraLabel.getAttribute("class") == "completed") {
         // Om uppgiften redan har klassen utförd
-        sakAttGora.setAttribute("class", "");
+        sakAttGoraLabel.setAttribute("class", "");
         avklaradeUppgifter--; // Subtrahera från avklarade uppgifter
       } else {
-        sakAttGora.setAttribute("class", "completed"); // Annars ge den klassen completed via css
+        sakAttGoraLabel.setAttribute("class", "completed"); // Annars ge den klassen completed via css
         avklaradeUppgifter++; // Addera till avklarade uppgifter
       }
 
@@ -79,7 +79,7 @@ laggTillBtn.addEventListener("click", function () {
 
     taBortLabel.addEventListener("click", function () {
       // Om klassen är completed ska avklaradeUppgifter räknas ned
-      if (sakAttGora.getAttribute("class") == "completed") {
+      if (sakAttGoraLabel.getAttribute("class") == "completed") {
         avklaradeUppgifter--; // Subtrahera från avklarade uppgifter
       }
       sakAttGora.remove(sakAttGora);
