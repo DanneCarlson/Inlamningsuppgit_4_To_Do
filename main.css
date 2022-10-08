@@ -6,5 +6,30 @@ h1 {
 
     text-decoration: line-through;
     color:darkgray
+}
 
+#list{
+    color: blueviolet;  
+}
+
+#list:hover{
+    color: crimson;
+}
+
+span{
+   margin:20px;
+   margin-right: 2cm;
+   font-size: larger; 
+}
+
+p{
+    font-size:larger;
+}
+
+#nyUppgift{
+    font-size: larger;
+}
+
+#labelInput{
+    font-size: larger;
 }
