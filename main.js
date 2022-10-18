@@ -39,13 +39,15 @@ laggTillBtn.addEventListener("click", function () {
   // Om användaren inte matat in något i textfältet
   if (nySakAttGora.length == 0) {
     returInfo.innerHTML = "Input must not be empty";
+    returInfo.setAttribute("class", "blink");
     return;
   } else {
     let sakAttGora = document.createElement("li"); // Skapar plats i listan
     let sakAttGoraLabel = document.createElement("span"); // Skapar ett span i listan
     let taBortLabel = document.createElement("span");
     taBortLabel.innerHTML = papperskorg;
-    
+
+    returInfo.setAttribute("class", "");
 
     listan.appendChild(sakAttGora); // Lägger till element/rad i listan
     sakAttGoraLabel.innerText = nySakAttGora; // Sätter det som användaren matat in
