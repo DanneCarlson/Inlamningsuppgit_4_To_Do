@@ -1,35 +1,180 @@
-h1 {
-    color:blueviolet
+
+
+#info{
+    font-style: italic;
+    color: crimson;
+    font-weight: bold;
+    margin-left: 35%;
+    margin-right: 0%;
 }
+
+body {
+    background-color:salmon;
+    font-family: 'Gudea', sans-serif;
+    margin-top:5%;
+    margin-left: 40%;
+    margin-right: 40%;
+    line-height: 1;
+    background-size:cover; 
+  }
+
+  #section{
+    background-color: white;
+    width: 500px;
+    height: 220px;
+}
+
+
+h1 {
+    color:black; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    margin-left: 33%;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    
+    
+
+    /*transform: rotate(-4deg);
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 20%;
+    background-color: crimson;
+    transition: border-radius 3s, background-color 5s;*/
+      
+}
+
+#avklarat{
+    font-size: small;
+    margin-left: 43%;
+    margin-right: 15%;
+}
+
+#laggTillBtn{
+    height: 28px;
+    width: 45px;
+    font-weight:normal;
+    font-size:medium;
+    border-width:thin;
+    border-radius: 4px;  
+}
+
+
+.nyUppgift{
+    color: black;
+    margin-left: 23%;
+    border-color: rgb(20, 21, 21);
+    border-radius: 4px;
+    border-width: thin;
+    
+    
+    
+}
+
+#nyUppgift {
+    font-size: larger;
+    width: 42%;
+}
+
+#labelInput {
+    font-size: larger;
+}
+
+
 
 .completed {
-
     text-decoration: line-through;
-    color:darkgray
+    color:darkgray;
 }
 
-#list{
-    color: blueviolet;  
-}
+/*#list {
+    color: black; 
+    line-height: 2; 
+    margin-top: 0px;
+    
+}*/
 
-#list:hover{
+/*#list:hover {
     color: crimson;
+}*/
+
+span {
+   margin:10px;
+   margin-right:10%;
+   margin-left: 3px;
+   font-size: larger;
 }
 
-span{
-   margin:20px;
-   margin-right: 2cm;
-   font-size: larger; 
-}
-
-p{
+p {
     font-size:larger;
 }
 
-#nyUppgift{
-    font-size: larger;
+
+
+li{
+    display:flex;
+    background-color: white;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 10%;
+   
+    
+ 
+    /*justify-content: space-between;*/
+    /*border: 2px solid black;
+    border-radius: 20%;*/
+    max-height: 10cm;
 }
 
-#labelInput{
-    font-size: larger;
+li:hover{
+    font-weight: bold;
+    color: black;
+    text-decoration: line-through;
 }
+
+#listBakgrund{
+    background-color:white;
+}
+
+
+/*h1:hover{
+    border-radius: 100%;
+    color: aqua;
+    background-color: blue;
+    animation: red-blue-green 5s infinite;
+}*/
+
+
+
+/*@keyframes h1-colors {
+    0% {
+        color:  lightgray;
+    }
+    25% {
+        color: grey;
+    }
+    50% {
+        color: black;
+    }
+    75% {
+        color: grey;
+    }
+    100% {
+        color: lightgray;
+    }
+}*/
+
+/*@keyframes red-blue-green{
+    0%{
+        border-radius: 50%;
+        background-color: crimson;
+    }
+    50%{
+        border-radius: 0%;
+        background-color:blue ;
+    }
+    100%{
+        border-radius: 0%;
+        background-color: chartreuse;
+    }
+}*/

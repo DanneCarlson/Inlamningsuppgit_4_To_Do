@@ -17,11 +17,19 @@ const todoArray = [];
 // Referens till det som användaren matar in i textfältet
 const nyUppgift = document.querySelector("#nyUppgift");
 
+/*let todoBackground = '<img src="todo.png">';
+let backgroundLabel = createElement("span");
+backgroundLabel.innerHTML = todoBackground;*/
+
+
+
 
 
 let papperskorg = '<i class="fa-regular fa-trash-can"></i>';
 
-let img = '<img src="trash.png">';
+//let img = '<img src="trash.png">';
+
+
 
 
 laggTillBtn.addEventListener("click", function () {
@@ -30,20 +38,22 @@ laggTillBtn.addEventListener("click", function () {
 
   // Om användaren inte matat in något i textfältet
   if (nySakAttGora.length == 0) {
-    returInfo.innerHTML = "Vänligen ange en uppgift att lägga till";
+    returInfo.innerHTML = "Input must not be empty";
     return;
   } else {
     let sakAttGora = document.createElement("li"); // Skapar plats i listan
     let sakAttGoraLabel = document.createElement("span"); // Skapar ett span i listan
     let taBortLabel = document.createElement("span");
     taBortLabel.innerHTML = papperskorg;
+    
 
     listan.appendChild(sakAttGora); // Lägger till element/rad i listan
     sakAttGoraLabel.innerText = nySakAttGora; // Sätter det som användaren matat in
     sakAttGora.appendChild(sakAttGoraLabel); // Lägger till uppgiften i listelementet 
-    //sakAttGora.appendChild(tomrumLabel);
+    
     sakAttGora.appendChild(taBortLabel);
 
+    
     todoArray.push(nySakAttGora); // Lägg till uppgiften i arrayen
 
     // När en klickar på span/uppgift i listan
@@ -57,7 +67,7 @@ laggTillBtn.addEventListener("click", function () {
         avklaradeUppgifter++; // Addera till avklarade uppgifter
       }
 
-      avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`; // Visar antalet avklarade uppgifter
+      avklarat.innerHTML = `${avklaradeUppgifter} completed`; // Visar antalet avklarade uppgifter
     });
 
     taBortLabel.addEventListener("click", function () {
@@ -67,7 +77,7 @@ laggTillBtn.addEventListener("click", function () {
       }
       sakAttGora.remove(sakAttGora);
       
-      avklarat.innerHTML = `${avklaradeUppgifter} uppgift/er avklarad/e`;
+      avklarat.innerHTML = `${avklaradeUppgifter} completed`;
     });
 
     //Tömmer inmatningsfältet och infofältet
