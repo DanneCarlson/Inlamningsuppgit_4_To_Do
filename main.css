@@ -1,9 +1,46 @@
 
-/* Section ska animeras in? */
+/* Section (intro) ska animeras in */
 
 
 
 
+/* bounceInDown ska användas */
+.introBounce{
+    animation: introBounce 1s;
+}
+
+@keyframes introBounce {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 25px, 0);
+    }
+    75% {
+        transform: translate3d(0, -10px, 0);
+    }
+    90% {
+        transform: translate3d(0, 5px, 0);
+    }
+    
+    100% {
+        transform: none;
+    }
+    
+}
+
+
+/*Testkod
+    0% {top: 0px; background: red; width: 100px;}
+    100% {top: 200px; background: yellow; width: 300px;}
+*/
+
+
+/*0%, 60%, 75%, 90%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}*/
 
 
 
@@ -14,6 +51,7 @@
     margin-left: 37%;
     margin-right: 0%;
 }
+
 
 @keyframes info-blink {
      0%{
@@ -34,12 +72,30 @@
     }
 }
 
+
 .blink{
     animation: info-blink 500ms;
 }
 
+
 body {
-    background-color:salmon;
+    
+    /* Jag vill visa att jag förstått att bakgrunden ska vara "linear-gradient". 
+    Men när jag kör "uppifrån och ned" blir det blir det 4 likadana fält över sidan. 
+    Och anger jag "no-repeat" blir det bara på 1/4 av sidan. Så jag har gjort från vänster till höger för att
+    i alla fall göra något */
+
+    background-image:linear-gradient(to left, pink, salmon);
+    /*background-repeat: no-repeat;
+    background-size:cover;*/
+
+    /* Är det nåt sånt här som behövs?: För att använda leverantörsprefix, lägg bara till 
+    två ytterligare background regler med linear-gradient värde prefix med -webkit- och -moz-. 
+    De ska också visas före den vanliga regeln utan något leverantörsprefix:*/
+
+    
+    
+    /*background-color:salmon;*/
     font-family: 'Gudea', sans-serif;
     margin-top:5%;
     margin-left: 40%;
@@ -48,10 +104,12 @@ body {
     background-size:cover; 
   }
 
+
   #section{
     background-color: white;
     width: 500px;
     height: 200px;
+    /*background: cover;*/
 }
 
 
@@ -61,18 +119,9 @@ h1 {
     font-size: 50px;
     margin-left: 31%;
     margin-top: 0px;
-    margin-bottom: 15px;
-    
-    
-
-    /*transform: rotate(-4deg);
-    margin-bottom: 50px;
-    text-align: center;
-    border-radius: 20%;
-    background-color: crimson;
-    transition: border-radius 3s, background-color 5s;*/
-      
+    margin-bottom: 15px;   
 }
+
 
 #avklarat{
     font-size: 17px;
@@ -80,43 +129,105 @@ h1 {
     margin-right: 15%;
 }
 
+
 #laggTillBtn{
     height: 30px;
     width: 45px;
     font-weight:normal;
     font-size:medium;
     border-width:thin;
-    border-radius: 4px; 
-     
+    border-radius: 4px;    
 }
 
 
+/*Lärdom efter flera timmar med just detta: webbläsare lägger själv till border som måste tas bort*/
+input[type=text]:focus {
+    border-color: rgb(53, 109, 240) !important;
+    border-width: 2px !important;
+    outline:none;
+  }
 
-
-.nyUppgift{
-    color: black;
-    margin-left: 23%;
-    border-color: rgb(20, 21, 21);
-    border-radius: 4px;
-    border-width: thin;   
-}
 
 #nyUppgift {
     font-size: larger;
     width: 44%;
     height: 12%;
+
+    color: black;
+    margin-left: 23%;
+    border-color: rgb(21, 22, 22);
+    border-radius: 4px;
+    border-width: thin; 
 }
+
 
 #labelInput {
     font-size: larger;
 }
 
 
-
 .completed {
     text-decoration: line-through;
     color:darkgray;
 }
+
+
+span {
+   margin:8px;
+   /*margin-right:3%;
+   margin-left: 7px;*/
+   font-size: larger;
+   height: 20px;
+}
+
+
+p {
+    font-size:larger;
+}
+
+
+li{
+    display:flex;
+    background-color: white;
+    /*position:relative;*/
+    /*left: 20px;
+    right: 20px;*/
+    margin-left: 30%;
+    margin-right: 30%;
+    /*width: 10%;*/
+    width: 300px;
+    /*padding: 10px;*/
+    /*margin: 0 auto 0 auto;
+    /*justify-content: space-between;*/
+    /*border: 2px solid black;
+    border-radius: 20%;*/
+    max-height: 10cm;
+}
+
+
+li:hover{
+    /*font-weight: bold;*/
+    color: black;
+    text-decoration: line-through;
+}
+
+#listBakgrund{
+    background-color:white;
+}
+
+
+
+
+/*.blueBorder{
+    color: rgb(71, 102, 239);
+    margin-left: 23%;
+    border-widths: 30px solid;
+    border-color: rgb(53, 109, 240) !important;
+    color: rgb(53, 109, 240) !important;
+    border-radius: 4px;
+    border-width: thin;     
+}*/
+
 
 /*#list {
     color: black; 
@@ -129,63 +240,19 @@ h1 {
     color: crimson;
 }*/
 
-span {
-   margin:8px;
-   /*margin-right:3%;
-   margin-left: 7px;*/
-   font-size: larger;
-   height: 20px;
-
-}
-
-p {
-    font-size:larger;
-}
-
-
-li{
-    display:flex;
-    background-color: white;
-    /*position: relative;*/
-    /*left: 20px;
-    right: 20px;*/
-    margin-left: 30%;
-    margin-right: 30%;
-    /*width: 10%;*/
-    
-
-
-
-    width: 300px;
-/*padding: 10px;*/
-/*margin: 0 auto 0 auto;
-
-   
-    
- 
-    /*justify-content: space-between;*/
-    /*border: 2px solid black;
-    border-radius: 20%;*/
-    max-height: 10cm;
-}
-
-li:hover{
-    font-weight: bold;
-    color: black;
-    text-decoration: line-through;
-}
-
-#listBakgrund{
-    background-color:white;
-}
-
-
 /*h1:hover{
     border-radius: 100%;
     color: aqua;
     background-color: blue;
     animation: red-blue-green 5s infinite;
 }*/
+
+/*transform: rotate(-4deg);
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 20%;
+    background-color: crimson;
+    transition: border-radius 3s, background-color 5s;*/
 
 
 

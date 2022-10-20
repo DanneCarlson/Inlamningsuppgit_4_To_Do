@@ -25,10 +25,14 @@ backgroundLabel.innerHTML = todoBackground;*/
 
 
 
-let papperskorg = '<i class="fa-regular fa-trash-can"></i>';
+//let papperskorg = '<i class="fa-regular fa-trash-can"></i>';
 
-//let img = '<img src="trash.png">';
+let imgTrash = '<img src="trash-bin.png" height="10px">';
+let papperskorg = imgTrash;
 
+
+/*let introBounce = querySelector(".intro");
+introBounce.setAttribute("class", "introBounce");*/
 
 
 
@@ -87,5 +91,22 @@ laggTillBtn.addEventListener("click", function () {
     returInfo.innerHTML = "";
   }
 });
+
+
+
+
+
+
+
+
+// Varför funkar inte detta?
+/*nyUppgift.addEventListener("click", function (){
+  nyUppgift.setAttribute("class", "blueBorder");
+}
+);*/
+
+/*function blueBorder (nyUppgift){
+  nyUppgift.setAttribute("class", "blueBorder");
+}*/
 
 
