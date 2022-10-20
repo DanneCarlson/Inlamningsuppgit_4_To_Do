@@ -1,7 +1,4 @@
 
-
-
-
 /* Richard: nedanstående bounce ser helt rätt ut och funkar. Ibland blir det dock att den bara åker rakt ned
    utan att bounca, kan det bero på webbläsaren. Händer ibland vid reload, men aldrig när jag trycker ctr-s.i VS Code */
 
@@ -64,8 +61,6 @@
 }
 
 
-
-
 .fadeUp{
     animation: fadeUp 500ms;
 }
@@ -78,6 +73,31 @@
     100% {
         opacity: 1;
         transform: none;
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+    color:darkgray;
+    animation: fadeToGray 150ms;
+}
+
+
+@keyframes fadeToGray {
+    0% {
+        color:  rgb(22, 1, 1);
+    }
+    25% {
+        color:rgb(48, 46, 46);
+    }
+    50% {
+        color:rgb(78, 76, 76);
+    }
+    75% {
+        color:rgb(119, 115, 115);
+    }
+    100% {
+        color:rgb(147, 144, 144);
     }
 }
 
@@ -112,6 +132,7 @@ body {
     background-color: white;
     width: 500px;
     height: 200px;
+
     /*background: cover;*/
 }
 
@@ -143,8 +164,8 @@ h1 {
 }
 
 
-/* Lärdom efter flera timmar med bara detta att inmatningsfältet ska bli blått när det är aktivt: 
-webbläsare lägger själv till border som måste tas bort */
+/* Lärdom efter flera timmar med att inmatningsfältet ska bli blått när det är aktivt: 
+webbläsare lägger själv till border (outline) som måste tas bort */
 
 input[type=text]:focus {
     border-color: rgb(53, 109, 240) !important;
@@ -171,18 +192,15 @@ input[type=text]:focus {
 }
 
 
-.completed {
-    text-decoration: line-through;
-    color:darkgray;
-}
-
-
 span {
    margin:8px;
-   /*margin-right:3%;
-   margin-left: 7px;*/
-   font-size: larger;
+   /*margin-right:50%;
+   margin-left: 100%;*/
+   font-family:Arial, Helvetica, sans-serif;
+   font-weight:500;
+   font-size: 25px;
    height: 20px;
+   align-content:flex-start;
 }
 
 
@@ -193,12 +211,18 @@ p {
 
 li{
     display:flex;
-    background-color: white;
+    justify-content: center;
+
+    /*background-color: white;*/
     /*position:relative;*/
     /*left: 20px;
     right: 20px;*/
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 13%;
+    /*margin-right: 24%;*/
+    padding-bottom: 10px;
+
+    
+    
     /*width: 10%;*/
     width: 300px;
     /*padding: 10px;*/
@@ -206,7 +230,7 @@ li{
     /*justify-content: space-between;*/
     /*border: 2px solid black;
     border-radius: 20%;*/
-    max-height: 10cm;
+    /*max-height: 10cm;*/
 }
 
 
@@ -223,15 +247,14 @@ li:hover{
 
 
 
-/*.blueBorder{
-    color: rgb(71, 102, 239);
-    margin-left: 23%;
-    border-widths: 30px solid;
-    border-color: rgb(53, 109, 240) !important;
-    color: rgb(53, 109, 240) !important;
-    border-radius: 4px;
-    border-width: thin;     
-}*/
+
+
+
+
+
+
+/* Bara skräp här under -----------------------------------------------------------------------------------------------*/
+
 
 
 /*#list {

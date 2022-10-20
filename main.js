@@ -27,7 +27,7 @@ backgroundLabel.innerHTML = todoBackground;*/
 
 //let papperskorg = '<i class="fa-regular fa-trash-can"></i>';
 
-let imgTrash = '<img src="trash-bin.png" height="10px">';
+let imgTrash = '<img src="trash-bin.png" height="15px">';
 let papperskorg = imgTrash;
 
 
