@@ -40,6 +40,9 @@ laggTillBtn.addEventListener("click", function () {
   // Lokal variabel för det som användaren matat in
   let nySakAttGora = nyUppgift.value;
 
+  //laggTillBtn.setAttribute("class", "fadeUp");
+
+
   // Om användaren inte matat in något i textfältet
   if (nySakAttGora.length == 0) {
     returInfo.innerHTML = "Input must not be empty";
@@ -47,20 +50,29 @@ laggTillBtn.addEventListener("click", function () {
     return;
   } else {
     let sakAttGora = document.createElement("li"); // Skapar plats i listan
+    
     let sakAttGoraLabel = document.createElement("span"); // Skapar ett span i listan
     let taBortLabel = document.createElement("span");
     taBortLabel.innerHTML = papperskorg;
 
     returInfo.setAttribute("class", "");
 
+
+    // Sätta class på sakAttGora för att fade:a in
+    sakAttGora.setAttribute("class", "fadeUp");
+  
+    //listan.setAttribute("class", "fadeUp");
     listan.appendChild(sakAttGora); // Lägger till element/rad i listan
+    
     sakAttGoraLabel.innerText = nySakAttGora; // Sätter det som användaren matat in
     sakAttGora.appendChild(sakAttGoraLabel); // Lägger till uppgiften i listelementet 
-    
     sakAttGora.appendChild(taBortLabel);
+    
+    
+    
 
     
-    todoArray.push(nySakAttGora); // Lägg till uppgiften i arrayen
+    //todoArray.push(nySakAttGora); // Lägg till uppgiften i arrayen
 
     // När en klickar på span/uppgift i listan
     sakAttGoraLabel.addEventListener("click", function () {
@@ -79,7 +91,7 @@ laggTillBtn.addEventListener("click", function () {
     taBortLabel.addEventListener("click", function () {
       // Om klassen är completed ska avklaradeUppgifter räknas ned
       if (sakAttGoraLabel.getAttribute("class") == "completed") {
-        avklaradeUppgifter--; // Subtrahera från avklarade uppgifter
+        //avklaradeUppgifter--; // Subtrahera från avklarade uppgifter
       }
       sakAttGora.remove(sakAttGora);
       

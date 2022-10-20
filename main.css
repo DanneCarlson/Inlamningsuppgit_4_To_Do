@@ -1,10 +1,12 @@
 
-/* Section (intro) ska animeras in */
 
 
 
+/* Richard: nedanstående bounce ser helt rätt ut och funkar. Ibland blir det dock att den bara åker rakt ned
+   utan att bounca, kan det bero på webbläsaren. Händer ibland vid reload, men aldrig när jag trycker ctr-s.i VS Code */
 
-/* bounceInDown ska användas */
+/* bounceInDown */
+
 .introBounce{
     animation: introBounce 1s;
 }
@@ -24,24 +26,10 @@
     90% {
         transform: translate3d(0, 5px, 0);
     }
-    
     100% {
         transform: none;
-    }
-    
+    }   
 }
-
-
-/*Testkod
-    0% {top: 0px; background: red; width: 100px;}
-    100% {top: 200px; background: yellow; width: 300px;}
-*/
-
-
-/*0%, 60%, 75%, 90%, 100% {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-}*/
-
 
 
 #info{
@@ -52,6 +40,9 @@
     margin-right: 0%;
 }
 
+.blink{
+    animation: info-blink 500ms;
+}
 
 @keyframes info-blink {
      0%{
@@ -73,8 +64,21 @@
 }
 
 
-.blink{
-    animation: info-blink 500ms;
+
+
+.fadeUp{
+    animation: fadeUp 500ms;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 
@@ -93,11 +97,10 @@ body {
     två ytterligare background regler med linear-gradient värde prefix med -webkit- och -moz-. 
     De ska också visas före den vanliga regeln utan något leverantörsprefix:*/
 
-    
-    
+
     /*background-color:salmon;*/
     font-family: 'Gudea', sans-serif;
-    margin-top:5%;
+    margin-top:1%;
     margin-left: 40%;
     margin-right: 40%;
     line-height: 1;
@@ -140,7 +143,9 @@ h1 {
 }
 
 
-/*Lärdom efter flera timmar med just detta: webbläsare lägger själv till border som måste tas bort*/
+/* Lärdom efter flera timmar med bara detta att inmatningsfältet ska bli blått när det är aktivt: 
+webbläsare lägger själv till border som måste tas bort */
+
 input[type=text]:focus {
     border-color: rgb(53, 109, 240) !important;
     border-width: 2px !important;
