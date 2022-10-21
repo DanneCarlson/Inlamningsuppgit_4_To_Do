@@ -1,12 +1,13 @@
 
 
-  #section{
+#section {
     background-color: white;
     width: 500px;
-    height: 200px;  
+    height: 200px;
+    box-shadow: 1px 1px 10px #524c4c;
 }
 
-.introBounce{
+.introBounce {
     animation: introBounce 1s;
 }
 
@@ -19,19 +20,12 @@
         opacity: 1;
         transform: translate3d(0, 25px, 0);
     }
-    75% {
-        transform: translate3d(0, -10px, 0);
-    }
-    90% {
-        transform: translate3d(0, 5px, 0);
-    }
     100% {
         transform: none;
-    }   
+    } 
 }
 
-
-#info{
+#info {
     font-style: italic;
     color: crimson;
     font-weight: bold;
@@ -39,7 +33,7 @@
     margin-right: 0%;
 }
 
-.blink{
+.blink {
     animation: info-blink 700ms;
 }
 
@@ -61,8 +55,7 @@
     }
 }
 
-
-.fadeUp{
+.fadeUp {
     animation: fadeUp 500ms;
 }
 
@@ -83,7 +76,6 @@
     animation: fadeToGray 150ms;
 }
 
-
 @keyframes fadeToGray {
     0% {
         color:  rgb(22, 1, 1);
@@ -102,23 +94,18 @@
     }
 }
 
+/* Kom ihåg att höjden med "vh" fixade bakgrunden*/
 
 body {
-    
-    /* Jag vill visa att jag förstått att bakgrunden ska vara "linear-gradient". 
-    Men när jag kör "uppifrån och ned" blir det blir det 4 likadana fält över sidan. 
-    Och anger jag "no-repeat" blir det bara på 1/4 av sidan. Så jag har gjort från vänster till höger för att
-    i alla fall göra något */
-
-    background-image:linear-gradient(to left, pink, salmon);
+    background-image:linear-gradient( pink, salmon);
     font-family: 'Gudea', sans-serif;
     margin-top:1%;
     margin-left: 40%;
     margin-right: 40%;
     line-height: 1;
-    background-size:cover; 
+    height: 100vh;
+    /*background-size:cover;*/
   }
-
 
 h1 {
     color:black; 
@@ -129,15 +116,13 @@ h1 {
     margin-bottom: 15px;   
 }
 
-
-#avklarat{
+#avklarat {
     font-size: 17px;
     margin-left: 42%;
     margin-right: 15%;
 }
 
-
-#laggTillBtn{
+#laggTillBtn {
     height: 30px;
     width: 45px;
     font-weight:normal;
@@ -145,7 +130,6 @@ h1 {
     border-width:thin;
     border-radius: 4px;    
 }
-
 
 /* Lärdom efter flera timmar med att inmatningsfältet ska bli blått när det är aktivt: 
 webbläsare lägger själv till border (outline) som måste tas bort */
@@ -155,7 +139,6 @@ input[type=text]:focus {
     border-width: 2px !important;
     outline:none;
   }
-
 
 #nyUppgift {
     font-size: larger;
@@ -169,7 +152,6 @@ input[type=text]:focus {
     border-width: thin; 
 }
 
-
 #labelInput {
     font-size: larger;
 }
@@ -178,21 +160,19 @@ p {
     font-size:larger;
 }
 
-
-li{
+li {
     display:flex;
     justify-content: center;
     margin-left: 13%;
     width: 300px;  
 }
 
-
-li:hover{
+li:hover {
     color: black;
     text-decoration: line-through;
 }
 
-#listBakgrund{
+#listBakgrund {
     background-color:white;
 }
 
@@ -200,13 +180,14 @@ span {
     margin:8px;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 25px;
-    margin-top: -10px;
+    margin-top: -14px;
     margin-bottom: 35px;
  }
 
 
 
-/* Bara skräp här under -----------------------------------------------------------------------------------------------*/
+
+
 
 
 
