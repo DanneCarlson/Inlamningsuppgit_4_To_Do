@@ -94,7 +94,7 @@
     }
 }
 
-/* Kom ihåg att höjden med "vh" fixade bakgrunden*/
+/* Kom ihåg att höjden med "vh" fixade bakgrunden (gradient) */
 
 body {
     background-image:linear-gradient( pink, salmon);
