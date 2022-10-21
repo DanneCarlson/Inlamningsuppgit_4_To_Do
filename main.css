@@ -4,7 +4,7 @@
     background-color: white;
     width: 500px;
     height: 200px;
-    box-shadow: 1px 1px 10px #524c4c;
+    box-shadow: 3px 3px 3px #a3a0a0;
 }
 
 .introBounce {
@@ -144,7 +144,6 @@ input[type=text]:focus {
     font-size: larger;
     width: 44%;
     height: 12%;
-
     color: black;
     margin-left: 23%;
     border-color: rgb(21, 22, 22);
@@ -163,8 +162,8 @@ p {
 li {
     display:flex;
     justify-content: center;
-    margin-left: 13%;
-    width: 300px;  
+    margin-left: -8%;
+    width: 500px;
 }
 
 li:hover {
@@ -174,6 +173,7 @@ li:hover {
 
 #listBakgrund {
     background-color:white;
+    box-shadow: 3px 3px 3px #a3a0a0;
 }
 
 span {
