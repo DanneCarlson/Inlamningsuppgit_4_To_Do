@@ -1,55 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>To-do List</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src="https://kit.fontawesome.com/c5dc3aeb44.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+      src="https://kit.fontawesome.com/c5dc3aeb44.js"
+      crossorigin="anonymous"
+    ></script>
     <!--<script src='main.js'></script>-->
-   
-</head>
-<body>
+  </head>
+  <body>
+    <section id="section" class="introBounce">
+      <br />
+      <h1 id="header">My ToDo</h1>
 
-    
+      <p id="avklarat">0 completed</p>
+      <br />
+      
+      <input type="text" id="nyUppgift" class="nyUppgift" name="nyUppgift" />
 
-<section id="section" class="introBounce">
+      <button id="laggTillBtn">OK</button>
 
-<!--onload="introBounce()" src="intro.js">-->
-    <br>
-    <h1 id="header">My ToDo</h1>
+      <br />
+      <small id="info"></small>
 
+      <div id="listBakgrund">
+        <ul id="list"></ul>
+      </div>
+    </section>
 
-
-
-    <p id="avklarat">0 completed</p>
-    <br>
-    <!--<label id="labelInput" for="nyUppgift">Lägg till sak att ta tag i:</label>-->
-    <input type="text" id="nyUppgift" class="nyUppgift" name="nyUppgift">
-
-    <button id="laggTillBtn">OK</button>
-    
-    
-    <br>
-    <small id="info"></small>
-    
-    
-    
-
-    <div id="listBakgrund">
-
-    <ul id="list"></ul>
-
-    </div>
-
-
-</section>
-
-
-    
-
-<script src='main.js'></script>
-    
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
